@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA & Automatización con n8n | Formación y Consultoría B2B en Caracas</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                        },
+                        accent: {
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        },
+                        n8n: '#ff6d5a'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-500 to-n8n flex items-center justify-center font-bold text-white text-xl shadow-lg shadow-brand-500/20">
+                    IA
+                </div>
+                <div>
+                    <span class="text-xl font-bold tracking-tight text-white">IA & Automation<span class="text-brand-500">.ccs</span></span>
+                    <span class="block text-xs text-slate-400">Caracas, Venezuela</span>
+                </div>
+            </div>
+
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#soluciones" class="hover:text-brand-500 transition">Soluciones</a>
+                <a href="#formacion" class="hover:text-brand-500 transition">Cursos</a>
+                <a href="#consultoria" class="hover:text-brand-500 transition">Empresas (B2B)</a>
+                <a href="#casos" class="hover:text-brand-500 transition">Casos de Éxito</a>
+                <a href="#resiliencia" class="hover:text-brand-500 transition">IA Privada & Local</a>
+                <a href="#faq" class="hover:text-brand-500 transition">FAQ</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <a href="#contacto-b2b" class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-slate-200 bg-slate-800 hover:bg-slate-700 rounded-lg border border-slate-700 transition">
+                    Diagnóstico B2B
+                </a>
+                <a href="#formacion" class="inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-white bg-brand-600 hover:bg-brand-500 rounded-lg shadow-lg shadow-brand-600/30 transition">
+                    Explorar Cursos
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(59,130,246,0.15),rgba(255,255,255,0))]"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs font-semibold text-brand-500 mb-6 shadow-inner">
+                    <span class="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    Diseñado para la realidad operativa de Venezuela
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6">
+                    Transforma tu carrera o tu empresa integrando <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 via-sky-400 to-n8n">Inteligencia Artificial</span> y n8n
+                </h1>
+                <p class="text-lg sm:text-xl text-slate-300 leading-relaxed font-normal mb-8">
+                    Desde los fundamentos prácticos hasta flujos de trabajo automatizados con n8n, arquitectura privada con Ollama/Llama 3 y consultoría B2B resiliente contra fallas de red.
+                </p>
+
+                <!-- Dual CTA Buttons -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+                    <a href="#contacto-b2b" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-500 hover:to-brand-600 text-white font-bold rounded-xl shadow-xl shadow-brand-600/25 transition flex items-center justify-center gap-3 group">
+                        <span>Solicitar Diagnóstico Gratuito B2B</span>
+                        <i class="fa-solid font-bold fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="#formacion" class="w-full sm:w-auto px-8 py-4 bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 font-semibold rounded-xl transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-graduation-cap text-brand-500"></i>
+                        <span>Ver Cursos para Profesionales</span>
+                    </a>
+                </div>
+
+                <!-- Trust Badges -->
+                <div class="flex flex-wrap items-center justify-center gap-6 text-xs text-slate-400 border-t border-slate-800/80 pt-6">
+                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-shield-halved text-emerald-400"></i> Servidores Locales & Resilientes</span>
+                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-[#1e3a8a] fa-money-bill-transfer text-brand-400"></i> Pagos en Pago Móvil, Zelle y USDT</span>
+                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-receipt text-amber-400"></i> Facturación Fiscal Venezolana</span>
+                </div>
+            </div>
+
+            <!-- Demo Container / Visual Proof -->
+            <div class="relative mx-auto max-w-5xl rounded-2xl border border-slate-800 bg-slate-900/90 p-3 sm:p-5 shadow-2xl backdrop-blur-xl">
+                <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-800 text-xs text-slate-400">
+                    <div class="flex items-center gap-2">
+                        <span class="w-3 h-3 rounded-full bg-rose-500/80"></span>
+                        <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
+                        <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+                        <span class="ml-2 font-mono text-slate-400">n8n_workflow_caracas_resilient.json</span>
+                    </div>
+                    <span class="bg-emerald-500/10 text-emerald-400 px-2.5 py-0.5 rounded-full text-[10px] font-semibold flex items-center gap-1">
+                        <i class="fa-solid fa-check"></i> En Producción (Self-Hosted)
+                    </span>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-3 font-mono text-xs">
+                    <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 hover:border-n8n/50 transition">
+                        <div class="text-n8n font-bold mb-1 flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-emerald-400"></i> 1. Trigger
+                        </div>
+                        <p class="text-slate-300 font-sans text-xs">Webhook Entrada WhatsApp Business + Pago Móvil</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 hover:border-brand-500/50 transition">
+                        <div class="text-brand-400 font-bold mb-1 flex items-center gap-2">
+                            <i class="fa-solid fa-robot"></i> 2. Agente IA
+                        </div>
+                        <p class="text-slate-300 font-sans text-xs">Parsing JSON estructurado + Ollama Llama 3 local</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 hover:border-amber-500/50 transition">
+                        <div class="text-amber-400 font-bold mb-1 flex items-center gap-2">
+                            <i class="fa-solid fa-arrows-rotate"></i> 3. Queue & Retry
+                        </div>
+                        <p class="text-slate-300 font-sans text-xs">Resiliencia a caídas de red + Backup local SQLite</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 hover:border-emerald-500/50 transition">
+                        <div class="text-emerald-400 font-bold mb-1 flex items-center gap-2">
+                            <i class="fa-solid fa-database"></i> 4. ERP Integración
+                        </div>
+                        <p class="text-slate-300 font-sans text-xs">Actualización Profit / Saint / Airtable + Notificación</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Bar -->
+    <section class="border-y border-slate-800 bg-slate-900/50 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-xs font-semibold uppercase tracking-wider text-slate-400 mb-8">
+                Stack Tecnológico Dominado e Integrado
+            </p>
+            <div class="flex flex-wrap items-center justify-center gap-8 md:gap-14 opacity-80 text-slate-300 font-bold text-lg">
+                <span class="flex items-center gap-2 hover:text-n8n transition"><i class="fa-solid fa-diagram-project text-n8n"></i> n8n</span>
+                <span class="flex items-center gap-2 hover:text-sky-400 transition"><i class="fa-solid fa-brain text-sky-400"></i> OpenAI</span>
+                <span class="flex items-center gap-2 hover:text-amber-400 transition"><i class="fa-solid fa-microchip text-amber-400"></i> Anthropic Claude</span>
+                <span class="flex items-center gap-2 hover:text-purple-400 transition"><i class="fa-solid fa-terminal text-purple-400"></i> Ollama / Llama 3</span>
+                <span class="flex items-center gap-2 hover:text-emerald-400 transition"><i class="fa-solid fa-database text-emerald-400"></i> Supabase</span>
+                <span class="flex items-center gap-2 hover:text-red-400 transition"><i class="fa-solid fa-bolt text-red-400"></i> Make</span>
+            </div>
+
+            <!-- Quantitative Metrics -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 pt-8 border-t border-slate-800/60 text-center">
+                <div>
+                    <div class="text-3xl sm:text-4xl font-extrabold text-white">+250</div>
+                    <div class="text-xs text-slate-400 mt-1">Profesionales Formados</div>
+                </div>
+                <div>
+                    <div class="text-3xl sm:text-4xl font-extrabold text-brand-500">+120</div>
+                    <div class="text-xs text-slate-400 mt-1">Flujos n8n Desplegados</div>
+                </div>
+                <div>
+                    <div class="text-3xl sm:text-4xl font-extrabold text-emerald-400">80%</div>
+                    <div class="text-xs text-slate-400 mt-1">Ahorro Promedio en Tiempo</div>
+                </div>
+                <div>
+                    <div class="text-3xl sm:text-4xl font-extrabold text-amber-400">99.8%</div>
+                    <div class="text-xs text-slate-400 mt-1">Uptime con Resiliencia Local</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Venezuelan Reality & Market Differentiator Section -->
+    <section id="resiliencia" class="py-20 bg-slate-950 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-brand-500 uppercase tracking-widest mb-2">Diseñado para Venezuela</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">IA y Automatización que NO se caen cuando falla el internet</p>
+                <p class="text-slate-400 mt-4 text-base">
+                    A diferencia de cursos genéricos internacionales, enseñamos e implementamos arquitecturas preparadas para la infraestructura real venezolana.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Pillar 1 -->
+                <div class="p-8 rounded-2xl bg-slate-900 border border-slate-800 hover:border-brand-500/50 transition">
+                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-wifi"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Tolerancia a Fallas de Red</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Configuración de n8n Self-Hosted con reintentos automáticos (exponential backoff), colas de ejecución locales y fallback ante pérdidas momentáneas de conectividad.
+                    </p>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="p-8 rounded-2xl bg-slate-900 border border-slate-800 hover:border-emerald-500/50 transition">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-user-lock"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Soberanía de Datos & IA Privada</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Implementación de LLMs locales (Ollama + Llama 3 / DeepSeek) sin enviar datos bancarios o confidenciales de tu empresa a servidores de terceros.
+                    </p>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="p-8 rounded-2xl bg-slate-900 border border-slate-800 hover:border-amber-500/50 transition">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Integración Local (Profit, Saint, Pago Móvil)</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Flujos listos para procesar capturas de Pago Móvil, conciliar facturas e integrarse con sistemas de gestión usados masivamente en el comercio venezolano.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Toggle: Formación B2C vs Consultoría B2B -->
+    <section id="soluciones" class="py-20 bg-slate-900/60 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Elige tu Ruta de Crecimiento</h2>
+                <p class="text-slate-400">¿Buscas aprender y dominar las herramientas o quieres una solución corporativa "Llave en Mano"?</p>
+                
+                <!-- Toggle Controls -->
+                <div class="inline-flex p-1.5 rounded-xl bg-slate-950 border border-slate-800 mt-8">
+                    <button id="btn-b2c" onclick="switchTab('b2c')" class="px-6 py-2.5 rounded-lg text-sm font-bold transition bg-brand-600 text-white shadow">
+                        <i class="fa-solid fa-user-graduate mr-2"></i> Para Profesionales (Cursos)
+                    </button>
+                    <button id="btn-b2b" onclick="switchTab('b2b')" class="px-6 py-2.5 rounded-lg text-sm font-bold transition text-slate-400 hover:text-white">
+                        <i class="fa-solid fa-briefcase mr-2"></i> Para Empresas (Consultoría)
+                    </button>
+                </div>
+            </div>
+
+            <!-- B2C Tab Content (Cursos) -->
+            <div id="tab-b2c" class="block">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Nivel 1 -->
+                    <div class="bg-slate-950 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-slate-700 transition">
+                        <div>
+                            <div class="text-xs font-bold text-brand-500 uppercase tracking-wider mb-2">Nivel 1 • Fundamentos</div>
+                            <h3 class="text-xl font-bold text-white mb-3">Prompt Engineering & Productividad</h3>
+                            <p class="text-slate-400 text-sm mb-6">Aprende a comunicarte eficazmente con ChatGPT, Claude y Gemini para automatizar tareas diarias sin programar.</p>
+                            <ul class="space-y-3 text-xs text-slate-300 mb-8">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Diseño de Prompts Avanzados</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Creación de Custom GPTs y Projects</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Automatización de Redacción y Análisis</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Casos de uso de oficina y negocios</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-white mb-4">$49 <span class="text-xs text-slate-400 font-normal">/ pago único</span></div>
+                            <a href="#contacto-b2c" class="block text-center py-3 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold rounded-xl text-sm transition">Inscribirme en Nivel 1</a>
+                        </div>
+                    </div>
+
+                    <!-- Nivel 2 (Destacado) -->
+                    <div class="bg-gradient-to-b from-slate-900 to-slate-950 border-2 border-brand-500 rounded-2xl p-6 flex flex-col justify-between relative shadow-2xl shadow-brand-500/10">
+                        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-brand-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                            Más Popular
+                        </div>
+                        <div>
+                            <div class="text-xs font-bold text-n8n uppercase tracking-wider mb-2">Nivel 2 • Automatización</div>
+                            <h3 class="text-xl font-bold text-white mb-3">Master en n8n & Workflows</h3>
+                            <p class="text-slate-400 text-sm mb-6">Conecta APIs, gestiona Webhooks y crea flujos de automatización complejos orientados a negocios.</p>
+                            <ul class="space-y-3 text-xs text-slate-300 mb-8">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> n8n Cloud y Self-Hosted en VPS</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Integración con Google Sheets, Airtable, WhatsApp</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Manejo de Errores y Retries resilientes</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> 10+ Plantillas n8n Plug & Play de regalo</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-white mb-4">$129 <span class="text-xs text-slate-400 font-normal">/ pago único</span></div>
+                            <a href="#contacto-b2c" class="block text-center py-3 px-4 bg-brand-600 hover:bg-brand-500 text-white font-semibold rounded-xl text-sm transition shadow-lg shadow-brand-600/30">Inscribirme en Nivel 2</a>
+                        </div>
+                    </div>
+
+                    <!-- Nivel 3 -->
+                    <div class="bg-slate-950 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-slate-700 transition">
+                        <div>
+                            <div class="text-xs font-bold text-purple-400 uppercase tracking-wider mb-2">Nivel 3 • Avanzado</div>
+                            <h3 class="text-xl font-bold text-white mb-3">Agentes IA & Sistemas RAG</h3>
+                            <p class="text-slate-400 text-sm mb-6">Desarrolla agentes autónomos, conecta bases de datos vectoriales y ejecuta modelos de IA locales.</p>
+                            <ul class="space-y-3 text-xs text-slate-300 mb-8">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Agentes Autónomos multitarea en n8n</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> RAG con Supabase / Qdrant y PDF corporativos</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Despliegue de Ollama (Llama 3 Local)</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Proyecto Final Integrador B2B</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-white mb-4">$199 <span class="text-xs text-slate-400 font-normal">/ pago único</span></div>
+                            <a href="#contacto-b2c" class="block text-center py-3 px-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold rounded-xl text-sm transition">Inscribirme en Nivel 3</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- B2B Tab Content (Consultoría) -->
+            <div id="tab-b2b" class="hidden">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Servicio 1 -->
+                    <div class="bg-slate-950 border border-slate-800 rounded-2xl p-6 hover:border-slate-700 transition">
+                        <div class="w-10 h-10 rounded-lg bg-brand-500/10 text-brand-500 flex items-center justify-center text-lg mb-4">
+                            <i class="fa-solid fa-magnifying-glass-chart"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Auditoría Operativa de IA</h3>
+                        <p class="text-slate-400 text-sm mb-4">Analizamos los flujos manuales de tu empresa e identificamos los cuellos de botella con mayor retorno de inversión al automatizar.</p>
+                        <span class="text-xs text-brand-400 font-semibold">Entrega: Informe de Factibilidad + ROI Estimado</span>
+                    </div>
+
+                    <!-- Servicio 2 -->
+                    <div class="bg-slate-950 border border-slate-800 rounded-2xl p-6 hover:border-slate-700 transition">
+                        <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-lg mb-4">
+                            <i class="fa-solid fa-gears"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Implementación Llave en Mano</h3>
+                        <p class="text-slate-400 text-sm mb-4">Diseñamos, desplegamos y probamos la arquitectura de automatización con n8n y modelos de IA en tus propios servidores.</p>
+                        <span class="text-xs text-emerald-400 font-semibold">Incluye: Garantía + Documentación + Capacitación</span>
+                    </div>
+
+                    <!-- Servicio 3 -->
+                    <div class="bg-slate-950 border border-slate-800 rounded-2xl p-6 hover:border-slate-700 transition">
+                        <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center text-lg mb-4">
+                            <i class="fa-solid fa-user-shield"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Retainer & Soporte SLA</h3>
+                        <p class="text-slate-400 text-sm mb-4">Póliza mensual de mantenimiento, actualización de flujos por cambios en APIs y soporte técnico prioritario ante incidencias.</p>
+                        <span class="text-xs text-amber-400 font-semibold">Soporte directo vía WhatsApp & Tickets</span>
+                    </div>
+                </div>
+
+                <div class="mt-10 p-8 rounded-2xl bg-gradient-to-r from-slate-900 via-slate-900 to-brand-950/40 border border-brand-500/30 flex flex-col sm:flex-row items-center justify-between gap-6">
+                    <div>
+                        <h4 class="text-lg font-bold text-white">¿Necesitas una formación In-Company personalizada para tu equipo?</h4>
+                        <p class="text-slate-400 text-sm mt-1">Capacitamos a tus departamentos de Operaciones, Ventas o TI directamente con tus casos de uso reales.</p>
+                    </div>
+                    <a href="#contacto-b2b" class="px-6 py-3 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-xl text-sm whitespace-nowrap transition shadow-lg">
+                        Agendar Sesión de Diagnóstico
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Casos de Uso / Show Don't Tell -->
+    <section id="casos" class="py-20 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-brand-500 uppercase tracking-widest mb-2">Demostración Práctica</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Automatizaciones Reales, Resultados Medibles</p>
+            </div>
+
+            <div class="space-y-8">
+                <!-- Case 1 -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 bg-slate-900 rounded-2xl border border-slate-800 overflow-hidden p-6 lg:p-8 items-center">
+                    <div class="lg:col-span-7">
+                        <span class="px-3 py-1 bg-emerald-500/10 text-emerald-400 text-xs font-semibold rounded-full">Atención & Ventas</span>
+                        <h3 class="text-2xl font-bold text-white mt-3 mb-3">Atención por WhatsApp + Verificación de Pago Móvil</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            El cliente envía el comprobante por WhatsApp. El bot con n8n extrae el número de referencia con visión por computadora, valida los datos del Pago Móvil en la cuenta bancaria y registra el pedido en el CRM.
+                        </p>
+                        <div class="flex items-center gap-6 text-sm font-semibold">
+                            <span class="text-brand-400"><i class="fa-solid fa-clock text-slate-500 mr-1"></i> Ahorro: 25 horas/semana</span>
+                            <span class="text-emerald-400"><i class="fa-solid fa-chart-line text-slate-500 mr-1"></i> Respuesta en < 10 segundos</span>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5 bg-slate-950 p-4 rounded-xl border border-slate-800 text-xs font-mono text-slate-300">
+                        <div class="text-slate-500 mb-2">// Flujo n8n Simplificado</div>
+                        <div class="text-emerald-400">[Webhook WhatsApp]</div>
+                        <div class="pl-4 text-slate-400">└─► [Extract OCR Text + OpenAI]</div>
+                        <div class="pl-8 text-slate-400">└─► [Match Reference en DB]</div>
+                        <div class="pl-12 text-sky-400">└─► [Send Confirmation & Invoice]</div>
+                    </div>
+                </div>
+
+                <!-- Case 2 -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 bg-slate-900 rounded-2xl border border-slate-800 overflow-hidden p-6 lg:p-8 items-center">
+                    <div class="lg:col-span-7">
+                        <span class="px-3 py-1 bg-brand-500/10 text-brand-400 text-xs font-semibold rounded-full">Finanzas & Administración</span>
+                        <h3 class="text-2xl font-bold text-white mt-3 mb-3">Procesamiento Automático de Facturas PDF e Inserción en Profit/Saint</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            Extracción inteligente de datos no estructurados desde archivos PDF de proveedores. Clasificación automática de RIF, IVA, montos y carga directa en el sistema contable corporativo.
+                        </p>
+                        <div class="flex items-center gap-6 text-sm font-semibold">
+                            <span class="text-brand-400"><i class="fa-solid fa-clock text-slate-500 mr-1"></i> Ahorro: 18 horas/semana</span>
+                            <span class="text-emerald-400"><i class="fa-solid fa-check-double text-slate-500 mr-1"></i> 0% Error de digitación</span>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5 bg-slate-950 p-4 rounded-xl border border-slate-800 text-xs font-mono text-slate-300">
+                        <div class="text-slate-500 mb-2">// Flujo n8n Contable</div>
+                        <div class="text-amber-400">[IMAP Email Trigger - PDF]</div>
+                        <div class="pl-4 text-slate-400">└─► [Llama 3 Local Structured JSON]</div>
+                        <div class="pl-8 text-slate-400">└─► [Validation RIF & Retención]</div>
+                        <div class="pl-12 text-emerald-400">└─► [Post to ERP Database]</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive ROI Calculator Widget -->
+    <section class="py-16 bg-gradient-to-b from-slate-950 to-slate-900 border-y border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold text-white">Calculadora Rápida de Ahorro con n8n</h3>
+                    <p class="text-slate-400 text-sm mt-1">Estima cuánto dinero y tiempo puede ahorrar tu equipo cada mes.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-2">Número de colaboradores en tareas repetitivas:</label>
+                            <input type="range" id="input-colabs" min="1" max="50" value="5" class="w-full accent-brand-500 bg-slate-950" oninput="calculateROI()">
+                            <div class="text-right text-xs font-bold text-brand-400 mt-1"><span id="val-colabs">5</span> personas</div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-2">Horas semanales dedicadas a data-entry / procesos manuales (por persona):</label>
+                            <input type="range" id="input-horas" min="2" max="30" value="10" class="w-full accent-brand-500 bg-slate-950" oninput="calculateROI()">
+                            <div class="text-right text-xs font-bold text-brand-400 mt-1"><span id="val-horas">10</span> horas/semana</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 text-center">
+                        <div class="text-xs uppercase text-slate-400 tracking-wider font-semibold">Ahorro Estimado Mensual</div>
+                        <div class="text-4xl font-extrabold text-emerald-400 my-2"><span id="res-horas">200</span> Horas</div>
+                        <p class="text-xs text-slate-400">Equivalente a recuperar el trabajo de <span id="res-fde" class="text-white font-bold">1.2</span> colaboradores a tiempo completo.</p>
+                        
+                        <a href="#contacto-b2b" class="inline-block mt-6 px-6 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl text-xs transition">
+                            Automatizar estos procesos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Magnet Section -->
+    <section class="py-16 bg-slate-900 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Lead Magnet B2C -->
+                <div class="p-8 rounded-2xl bg-gradient-to-br from-slate-950 to-slate-900 border border-slate-800 flex flex-col justify-between">
+                    <div>
+                        <span class="px-3 py-1 bg-brand-500/10 text-brand-400 text-xs font-semibold rounded-full">Recurso Gratuito para Estudiantes</span>
+                        <h4 class="text-xl font-bold text-white mt-4 mb-2">Descarga 5 Plantillas n8n de Utilidad Inmediata</h4>
+                        <p class="text-slate-400 text-sm mb-6">Workflows preconfigurados para importar a tu n8n y automatizar correo, Notion y alertas de Telegram en minutos.</p>
+                    </div>
+                    <form onsubmit="event.preventDefault(); alert('¡Gracias! Enlace de descarga enviado a tu correo.');" class="flex gap-2">
+                        <input type="email" required placeholder="Tu correo electrónico" class="bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-500 w-full">
+                        <button type="submit" class="px-5 py-2.5 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-xl text-sm transition whitespace-nowrap">Obtener</button>
+                    </form>
+                </div>
+
+                <!-- Lead Magnet B2B -->
+                <div class="p-8 rounded-2xl bg-gradient-to-br from-slate-950 to-slate-900 border border-slate-800 flex flex-col justify-between">
+                    <div>
+                        <span class="px-3 py-1 bg-amber-500/10 text-amber-400 text-xs font-semibold rounded-full">Para Directores y Gerentes</span>
+                        <h4 class="text-xl font-bold text-white mt-4 mb-2">Template de Auditoría de Procesos Candidatos a IA</h4>
+                        <p class="text-slate-400 text-sm mb-6">Checklist en Excel/PDF para evaluar qué operaciones de tu empresa son aptas para automatización con n8n.</p>
+                    </div>
+                    <form onsubmit="event.preventDefault(); alert('¡Gracias! Template enviado a tu correo corporativo.');" class="flex gap-2">
+                        <input type="email" required placeholder="Tu correo corporativo" class="bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500 w-full">
+                        <button type="submit" class="px-5 py-2.5 bg-amber-600 hover:bg-amber-500 text-white font-bold rounded-xl text-sm transition whitespace-nowrap">Descargar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials / Social Proof -->
+    <section class="py-20 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-brand-500 uppercase tracking-widest mb-2">Testimonios</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Lo que dicen alumnos y clientes en Caracas</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 text-sm">
+                    <div class="flex text-amber-400 text-xs mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-300 italic mb-6">"Aprendí a configurar n8n en un servidor propio. Lo mejor es que el enfoque del curso contempla la realidad de nuestro internet en Venezuela y cómo solucionar errores."</p>
+                    <div class="font-bold text-white">Carlos Mendoza</div>
+                    <div class="text-xs text-slate-500">Desarrollador Freelance • Caracas</div>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 text-sm">
+                    <div class="flex text-amber-400 text-xs mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-300 italic mb-6">"Implementaron un bot de automatización de facturación que nos ahorra horas diarias de trabajo manual. La atención y soporte post-implementación ha sido impecable."</p>
+                    <div class="font-bold text-white">Mariana Silva</div>
+                    <div class="text-xs text-slate-500">Gerente de Operaciones • Distribuidora Médica</div>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 text-sm">
+                    <div class="flex text-amber-400 text-xs mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-300 italic mb-6">"Poder pagar en Bolívares por Pago Móvil e inscribir a mi equipo sin complicaciones con divisas fue clave. Excelente nivel técnico."</p>
+                    <div class="font-bold text-white">Ing. Roberto Gómez</div>
+                    <div class="text-xs text-slate-500">Líder de TI • Firma de Consultoría</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Qualification B2B Form & Agendamiento -->
+    <section id="contacto-b2b" class="py-20 bg-slate-900/80 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-slate-950 border border-slate-800 rounded-3xl p-8 sm:p-12 shadow-2xl">
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <span class="px-3 py-1 bg-brand-500/10 text-brand-400 text-xs font-semibold rounded-full">Atención Prioritaria B2B</span>
+                    <h2 class="text-3xl font-extrabold text-white mt-3">Solicita un Diagnóstico Gratuito de IA</h2>
+                    <p class="text-slate-400 text-sm mt-2">Analizaremos la viabilidad tecnológica y el ROI estimado para tu empresa sin ningún compromiso.</p>
+                </div>
+
+                <form onsubmit="event.preventDefault(); alert('¡Formulario enviado! Nos pondremos en contacto contigo en menos de 24 horas.');" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-2">Nombre completo *</label>
+                            <input type="text" required class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:border-brand-500 focus:outline-none" placeholder="Ej. Alejandro Pérez">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-2">Correo corporativo *</label>
+                            <input type="email" required class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:border-brand-500 focus:outline-none" placeholder="nombre@empresa.com">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-2">Nombre de la Empresa / Organización</label>
+                            <input type="text" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:border-brand-500 focus:outline-none" placeholder="Ej. Comercializadora CCS">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-2">Tamaño de la Empresa</label>
+                            <select class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:border-brand-500 focus:outline-none">
+                                <option value="1-10">1 - 10 empleados</option>
+                                <option value="11-50">11 - 50 empleados</option>
+                                <option value="51-200">51 - 200 empleados</option>
+                                <option value="200+">Más de 200 empleados</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-medium text-slate-300 mb-2">¿Qué proceso u operación deseas automatizar prioritariamente?</label>
+                        <textarea rows="3" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:border-brand-500 focus:outline-none" placeholder="Ej. Atención al cliente por WhatsApp, conciliación bancaria de Pago Móvil, extracción de PDF..."></textarea>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-slate-900">
+                        <div class="text-xs text-slate-400 flex items-center gap-2">
+                            <i class="fa-solid fa-lock text-emerald-400"></i> Tus datos corporativos son 100% confidenciales.
+                        </div>
+                        <button type="submit" class="w-full sm:w-auto px-8 py-3.5 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-xl text-sm transition shadow-lg shadow-brand-600/30">
+                            Agendar Diagnóstico Gratuito
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-slate-950">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-white">Preguntas Frecuentes</h2>
+                <p class="text-slate-400 text-sm mt-2">Resolvemos tus dudas sobre formación, consultoría e infraestructura.</p>
+            </div>
+
+            <div class="space-y-4">
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl p-5 [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex items-center justify-between font-bold text-white cursor-pointer text-sm">
+                        <span>¿Necesito saber programar para aprender n8n?</span>
+                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-brand-500"></i></span>
+                    </summary>
+                    <p class="mt-3 text-xs leading-relaxed text-slate-400">
+                        No. n8n es una plataforma no-code/low-code. Para los niveles principiante e intermedio solo necesitas lógica de procesos. En el nivel avanzado enseñamos snippets básicos de JavaScript/Python opcionales para personalizar respuestas.
+                    </p>
+                </details>
+
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl p-5 [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex items-center justify-between font-bold text-white cursor-pointer text-sm">
+                        <span>¿Mis datos corporativos están seguros si integro n8n con IA?</span>
+                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-brand-500"></i></span>
+                    </summary>
+                    <p class="mt-3 text-xs leading-relaxed text-slate-400">
+                        Absolutamente. Ofrecemos y enseñamos la modalidad Self-Hosted (servidor propio) junto con modelos locales (Ollama/Llama 3), garantizando que la información sensible nunca salga del entorno seguro de tu empresa.
+                    </p>
+                </details>
+
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl p-5 [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex items-center justify-between font-bold text-white cursor-pointer text-sm">
+                        <span>¿Cuáles son los métodos de pago aceptados en Venezuela?</span>
+                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-brand-500"></i></span>
+                    </summary>
+                    <p class="mt-3 text-xs leading-relaxed text-slate-400">
+                        Aceptamos Pago Móvil (a la tasa oficial BCV), transferencias bancarias nacionales en Bolívares con factura fiscal, Zelle, Binance Pay (USDT) y tarjetas internacionales.
+                    </p>
+                </details>
+
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl p-5 [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex items-center justify-between font-bold text-white cursor-pointer text-sm">
+                        <span>¿Cómo garantizan que los flujos funcionen con las caídas de internet/luz?</span>
+                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-brand-500"></i></span>
+                    </summary>
+                    <p class="mt-3 text-xs leading-relaxed text-slate-400">
+                        Desplegamos instancias en VPS externos de alta disponibilidad o servidores locales respaldados por UPS, configurados con colas de ejecución persistentes que reintentan procesar los webhooks acumulados cuando se restablece la conexión.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-800 py-12 text-slate-400 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-3">
+                        <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center font-bold text-white text-sm">IA</div>
+                        <span class="text-base font-bold text-white">IA & Automation<span class="text-brand-500">.ccs</span></span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm mb-4">
+                        Formación pragmática y consultoría estratégica de Inteligencia Artificial y n8n adaptada al entorno empresarial de Caracas y Venezuela.
+                    </p>
+                    <div class="flex gap-4 text-base">
+                        <a href="#" class="hover:text-brand-500 transition"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" class="hover:text-brand-500 transition"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-brand-500 transition"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" class="hover:text-brand-500 transition"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h5 class="font-bold text-white uppercase tracking-wider mb-3">Programas</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#soluciones" class="hover:text-white transition">Nivel 1: Prompt Engineering</a></li>
+                        <li><a href="#soluciones" class="hover:text-white transition">Nivel 2: Master n8n</a></li>
+                        <li><a href="#soluciones" class="hover:text-white transition">Nivel 3: Agentes & RAG Privados</a></li>
+                        <li><a href="#soluciones" class="hover:text-white transition">Capacitación In-Company</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="font-bold text-white uppercase tracking-wider mb-3">Contacto Caracas</h5>
+                    <ul class="space-y-2">
+                        <li><i class="fa-solid fa-location-dot mr-1 text-brand-500"></i> Caracas, Distrito Capital</li>
+                        <li><i class="fa-solid fa-envelope mr-1 text-brand-500"></i> contacto@ia-caracas.com</li>
+                        <li><i class="fa-brands fa-whatsapp mr-1 text-emerald-400"></i> +58 (412) 000-0000</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500">
+                <p>© 2026 IA & Automation Caracas. Todos los derechos reservados.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-slate-400">Términos y Condiciones</a>
+                    <a href="#" class="hover:text-slate-400">Política de Privacidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Script for Tabs & ROI Calculator -->
+    <script>
+        function switchTab(tab) {
+            const btnB2c = document.getElementById('btn-b2c');
+            const btnB2b = document.getElementById('btn-b2b');
+            const tabB2c = document.getElementById('tab-b2c');
+            const tabB2b = document.getElementById('tab-b2b');
+
+            if (tab === 'b2c') {
+                btnB2c.className = 'px-6 py-2.5 rounded-lg text-sm font-bold transition bg-brand-600 text-white shadow';
+                btnB2b.className = 'px-6 py-2.5 rounded-lg text-sm font-bold transition text-slate-400 hover:text-white';
+                tabB2c.classList.remove('hidden');
+                tabB2b.classList.add('hidden');
+            } else {
+                btnB2b.className = 'px-6 py-2.5 rounded-lg text-sm font-bold transition bg-brand-600 text-white shadow';
+                btnB2c.className = 'px-6 py-2.5 rounded-lg text-sm font-bold transition text-slate-400 hover:text-white';
+                tabB2b.classList.remove('hidden');
+                tabB2c.classList.add('hidden');
+            }
+        }
+
+        function calculateROI() {
+            const colabs = parseInt(document.getElementById('input-colabs').value);
+            const horas = parseInt(document.getElementById('input-horas').value);
+
+            document.getElementById('val-colabs').innerText = colabs;
+            document.getElementById('val-horas').innerText = horas;
+
+            // Calculo mensual aproximado (4 semanas)
+            const totalHorasMensuales = colabs * horas * 4;
+            const fdeEquivalent = (totalHorasMensuales / 160).toFixed(1);
+
+            document.getElementById('res-horas').innerText = totalHorasMensuales;
+            document.getElementById('res-fde').innerText = fdeEquivalent;
+        }
+
+        // Initialize ROI on load
+        calculateROI();
+    </script>
+</body>
+</html>
